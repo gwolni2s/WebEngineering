@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            display: grid;
+            height: 100vh;
+            grid-template-rows: 5% 1fr 15%;
+        }
+        
+        header {
+            background: rgb(53, 49, 49);
+            grid-column: 1 / 4;
+        }
+        
+        .container {
+            display: flex;
+            align-items: center;
+            margin: 10%;
+        }
+        
+        .navigation {
+            display: flex;
+            justify-content: space-around;
+            padding: 1rp;
+        }
+        
+        a {
+            color: white;
+        }
+        
+        main {
+            background: rgb(204, 201, 201);
+            grid-column: 1 / 4;
+        }
+        
+        footer {
+            background: hsl(240, 66%, 13%);
+            text-align: center;
+            grid-column: 1 / 4;
+        }
+        
+        .button {
+            background-color: orange;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            display: inline-block;
+            margin: 2px;
+            border: none;
+            width: 50%;
+        }
+        
+        .content {
+            text-align: center;
+            color: black;
+        }
+        
+        .button {
+            border-radius: 8px;
+        }
+        
+        @media all and (max-width: 800px) {}
+        
+        @media all and (max-width: 500px) {}
+    </style>
+</head>
+
+<body>
+    <header>
+        <ul class="navigation">
+            <a>The book series</a>
+            <a>Testimonials</a>
+            <a>The Author</a>
+            <a>Free resources</a>
+        </ul>
+    </header>
+    <main>
+        <h1 style="color: black; text-align: center;">
+            You dont know JavaScript
+        </h1>
+        <div class="container">
+            <div>
+                <img src="https://kaul.inf.h-brs.de/we/assets/img/landing-img.png" alt="JavaScript-Book" style="width:70%;">
+            </div>
+            <div style="color: black; font-size: 150%; text-align: center;">
+                <p>Don't just drift through Javascript.</p>
+                <br>
+                <p>Understand how JavaScript works</p>
+                <br>
+                <p>Start your journey through the bumpy side of Javascript</p>
+                <button class="button button" style="width: 100%;">
+                    ORDER YOUR COPY NOW
+                </button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <br>
+        <br>
+        <h3 style="color: white">
+            The first ebook in the book series is absolutely free.
+        </h3>
+        <button class="button button">
+            FIND OUT MORE ABOUT THIS OFFER
+        </button>
+    </footer>
+</body>
+
+</html>
