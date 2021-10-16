@@ -10,8 +10,9 @@
         
         body {
             display: grid;
-            height: 100vh;
-            grid-template-rows: 5% 1fr 15%;
+            height: 100%;
+            grid-template-rows: 5% auto 15%;
+            margin: 0%;
         }
         
         header {
@@ -21,14 +22,16 @@
         
         .container {
             display: flex;
-            align-items: center;
-            margin: 10%;
+            flex-direction: row;
+            text-align: center;
+            justify-content: space-evenly;
+            margin: 15px;
         }
         
         .navigation {
             display: flex;
+            justify-self: center;
             justify-content: space-around;
-            padding: 1rp;
         }
         
         a {
@@ -38,6 +41,14 @@
         main {
             background: rgb(204, 201, 201);
             grid-column: 1 / 4;
+        }
+        
+        .flex-item-left {
+            flex: 50%;
+        }
+        
+        .flex-item-right {
+            flex: 50%;
         }
         
         footer {
@@ -65,14 +76,37 @@
         .button {
             border-radius: 8px;
         }
+        /*
+        Hide Scrollbar with code from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_hide_scrollbar_keep_func
+        */
         
-        @media all and (max-width: 800px) {}
+        .example {
+            overflow-y: scroll;
+            /* Add the ability to scroll */
+        }
+        /* Hide scrollbar for Chrome, Safari and Opera */
         
-        @media all and (max-width: 500px) {}
+        .example::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        
+        .example {
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+            /* Firefox */
+        }
+        
+        @media all and (max-width: 800px) {
+            .container {
+                flex-direction: column;
+            }
+        }
     </style>
 </head>
 
-<body>
+<body class="example">
     <header>
         <ul class="navigation">
             <a>The book series</a>
@@ -86,10 +120,10 @@
             You dont know JavaScript
         </h1>
         <div class="container">
-            <div>
+            <div class=".flex-item-left">
                 <img src="https://kaul.inf.h-brs.de/we/assets/img/landing-img.png" alt="JavaScript-Book" style="width:70%;">
             </div>
-            <div style="color: black; font-size: 150%; text-align: center;">
+            <div class=".flex-item-right" style="color: black; font-size: 150%; align-self: center;">
                 <p>Don't just drift through Javascript.</p>
                 <br>
                 <p>Understand how JavaScript works</p>
@@ -102,7 +136,6 @@
         </div>
     </main>
     <footer>
-        <br>
         <br>
         <h3 style="color: white">
             The first ebook in the book series is absolutely free.
