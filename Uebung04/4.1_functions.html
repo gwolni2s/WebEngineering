@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p id="id1">
+</p>
+<p id="id2">
+
+</p>
+<p id="id3">
+
+</p>
+<p id="id4">
+
+</p>
+<p id="id5">
+
+</p>
+<p id="id6">
+
+</p>
+<p id="id7">
+
+</p>
+<script>
+    //4.1 a
+    function identity(arg) {
+        return arg;
+    }
+    //4.1 b
+    function identity_function(arg) {
+        return identity(arg);
+    }
+    //4.1 c
+    function add(arg1, arg2) {
+        return arg1 + arg2;
+    }
+    function mul(arg1, arg2) {
+        return arg1 * arg2;
+    }
+    function min(arg1, arg2) {
+        return arg1 - arg2;
+    }
+    function div(arg1, arg2) {
+        return arg1 / arg2;
+    }
+    //4.1 d
+    function addf(x, y) {
+        return add(x, y);
+    }
+    //4.1 e
+    function apply(arg1, arg2, arg3) {
+        if (arg1 === "add") {
+            return addf(arg2, arg3);
+        } else if (arg1 === "mul") {
+            return mul(arg2, arg3);
+        } else {
+            return NaN;
+        };
+    }
+    document.getElementById("id1").innerHTML = identity("Hello World");
+    document.getElementById("id2").innerHTML = identity_function("Hallo Welt");
+    document.getElementById("id3").innerHTML = add(2, 3);
+    document.getElementById("id4").innerHTML = mul(4, 5);
+    document.getElementById("id5").innerHTML = addf(6, 9);
+    document.getElementById("id6").innerHTML = apply("add", 1, 2);
+</script>
+</body>
+</html>
