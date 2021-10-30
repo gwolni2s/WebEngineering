@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4.3_Fibonacci</title>
+</head>
+<body>
+<script>
+    //Fibonacci from w3schools and stack overflow
+    var i;
+    var fib = [];
+    fib[0] = 0;
+    fib[1] = 1;
+    for(i = 2; i <= 5000; i++) {
+        fib[i] = fib[i - 2] + fib[i - 1];
+        console.log(fib[i]);
+    }
+</script>
+</body>
+</html>
