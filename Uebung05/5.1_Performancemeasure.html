@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5.1_Performancemeasure of dom-operations</title>
+</head>
+<body>
+<script>
+    const t0 = performance.now();
+    const a = document.createElement("a");
+    const t1 = performance.now();
+    const diff1 = t1 - t0;
+    console.log("Call to create element took " + diff1 + " milliseconds.");
+
+    const t2 = performance.now();
+    a.appendChild(document.createTextNode("text"));
+    const t3 = performance.now();
+    const diff2 = t3 - t2;
+    console.log("Call to append a child took "+ diff2 + " milliseconds.");
+
+    const t4 = performance.now();
+    a.textContent = "text";
+    const t5 = performance.now();
+    const diff3 = t5 - t4;
+    console.log("Call to create a text content took "  + diff3 + " milliseconds.");
+
+    const t7 = performance.now();
+    a.innerText = "text";
+    const t8 = performance.now();
+    const diff4 = t8 - t7;
+    console.log("Call to create a inner Text took " + diff4 + " milliseconds.");
+
+    const t9 = performance.now();
+    a.innerHTML = "text";
+    const t10 = performance.now();
+    const diff5 = t10 - t9;
+    console.log("Call to create a inner HTML took " + diff5 + " milliseconds.");
+
+    const t11 = performance.now();
+    a.nodeValue = "text";
+    const t12 = performance.now();
+    const diff6 = t12 - t11;
+    console.log("Call to create a node value took " + diff6 +  " milliseconds.");
+</script>
+</body>
+</html>
