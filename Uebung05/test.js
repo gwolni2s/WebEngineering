@@ -4,7 +4,7 @@
 
 //speaker is added and all other speakers are stopped
 document.getElementById("id3").addEventListener
-        ("click", addSpeaker);
+("click", addSpeaker);
 
 function addSpeaker() {
 
@@ -19,6 +19,9 @@ function addSpeaker() {
 
     //Create timer element
     const timer = document.createElement("a");
+
+    //Stop all other speaker's time
+
 
     //Start time with 00:00:00 for every speaker
     let hourS = 0;
