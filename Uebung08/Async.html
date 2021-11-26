@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Async</title>
+</head>
+<body>
+<h1>
+    Concatenation of A.txt and B.txt
+</h1>
+<p id="concatenation">Concatenation did not happen yet</p>
+<script>
+    let fileA = "A";
+    let fileB = "B";
+
+    async function getConcat(fileA, fileB) {
+        let x = await fetch(fileA);
+        let y = await x.text();
+        document.getElementById("concatenation").innerHTML = y;
+        let z = await fetch(fileB);
+        let w = await z.text();
+        document.getElementById("concatenation").innerHTML += w;
+    }
+    getConcat(fileA, fileB);
+</script>
+</body>
+</html>

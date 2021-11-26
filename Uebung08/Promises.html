@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promises</title>
+</head>
+<body>
+<h1>
+    Concatenation of A.txt and B.txt
+</h1>
+<p id="concatenation">Concatenation did not happen yet</p>
+<script>
+    let fileA = "A";
+    let fileB = "B";
+
+    function getConcat(fileA, fileB) {
+        fetch (fileA)
+            .then(x => x.text())
+            .then(y => document.getElementById("concatenation").innerHTML = y);
+        fetch (fileB)
+            .then(x => x.text())
+            .then(y => document.getElementById("concatenation").innerHTML += y);
+    }
+    getConcat(fileA, fileB);
+</script>
+</body>
+</html>
+
+
