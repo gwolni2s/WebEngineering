@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .highcharts-figure,
+        .highcharts-data-table table {
+            min-width: 310px;
+            max-width: 800px;
+            margin: 1em auto;
+        }
+
+        #container {
+            height: 40000px;
+        }
+
+        .highcharts-data-table table {
+            font-family: Verdana, sans-serif;
+            border-collapse: collapse;
+            border: 1px solid #ebebeb;
+            margin: 10px auto;
+            text-align: center;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .highcharts-data-table caption {
+            padding: 1em 0;
+            font-size: 1.2em;
+            color: #555;
+        }
+
+        .highcharts-data-table th {
+            font-weight: 600;
+            padding: 0.5em;
+        }
+
+        .highcharts-data-table td,
+        .highcharts-data-table th,
+        .highcharts-data-table caption {
+            padding: 0.5em;
+        }
+
+        .highcharts-data-table thead tr,
+        .highcharts-data-table tr:nth-child(even) {
+            background: #f8f8f8;
+        }
+
+        .highcharts-data-table tr:hover {
+            background: #f1f7ff;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Aufgabe_9.2</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+
+//Source: https://www.highcharts.com/demo/column-basic
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/modules/export-data.js"></script>
+<script src="https://code.highcharts.com/modules/accessibility.js"></script>
+
+<svg>
+<figure class="highcharts-figure">
+    <div id="container"></div>
+    <p class="highcharts-description">
+    <h4>COVID-19: Fallzahlen in Deutschland und weltweit</h4>
+    <b>Fallzahlen in Deutschland</b><br><br>
+        Stand: Freitag 3.12.2021, 00:00 Uhr (online aktualisiert um 08:25 Uhr)
+
+        Die Tabelle wird montags bis freitags aktualisiert. Die aktuellen COVID-19-Meldedaten nach Bundesland und bis auf Kreisebene sind täglich, auch am Wochenende, dem Dashboard zu entnehmen.
+
+        Die "Differenz zum Vortag" bezieht sich auf Fälle, die dem RKI am Vortag übermittelt worden sind (bis 0.00 Uhr), diese Fälle wurden am gleichen Tag oder bereits an früheren Tagen beim Gesundheitsamt elektronisch erfasst. Bei den "Fällen in den letzten 7 Tagen" und der "7-Tage-Inzidenz" liegt das Meldedatum beim Gesundheitsamt zugrunde, also das Datum, an dem das lokale Gesundheitsamt Kenntnis über den Fall erlangt und ihn elektronisch erfasst hat (also nicht das Datum, an dem ein Fall im RKI übermittelt wird).
+        "Todesfälle" ist die Zahl, wie sie dem RKI übermittelt wurde, die Differenz der Todesfälle zum Vortag ist im Dashboard unter corona.rki.de veröffentlicht.
+
+        Außerdem stellt das RKI arbeitstäglich eine Gesamtübersicht der pro Tag ans RKI übermittelten Fälle und Todesfälle sowie die 7-Tage-Inzidenzen auf Kreisebene im Excelformat zur Verfügung.
+    </p>
+</figure>
+</svg>
+
+<script>
+    Highcharts.chart('container', {
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Elektronisch uebermittelte Daten'
+        },
+        subtitle: {
+            text: 'Source: https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Fallzahlen.html'
+        },
+        xAxis: {
+            categories: ["Anzahl", "Differenz zum Vortag", "Faelle in den letzten 7 Tagen", "7-Tage-Inzidenz", "Todesfaelle"],
+            crosshair: true
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Faelle'
+            }
+        },
+        tooltip: {
+            headerFormat: '<span style="font-size:10px">{point.key}</span><table>',
+            pointFormat: '<tr><td style="color:{series.color};padding:0">{series.name}: </td>' +
+                '<td style="padding:0"><b>{point.y:.1f}</b></td></tr>',
+            footerFormat: '</table>',
+            shared: true,
+            useHTML: true
+        },
+        plotOptions: {
+            column: {
+                pointPadding: 0.1,
+                borderWidth: 0.3
+            }
+        },
+        series: [{
+            name: 'Baden-Wuerttemdberg',
+            data: [847047,11705,57680,519.5,11843]
+
+        }, {
+            name: 'Bayern',
+            data:  [1153632,14919,75109,571.6,17739]
+
+        }, {
+            name: 'Berlin',
+            data: [279530,2546,13244,361.5,3844]
+
+        },{
+            name: 'Brandenburg',
+            data: [182587,2275,16579,655.0,4162]
+
+        },{
+            name: 'Bremen',
+            data: [40104,280,1551,228.0,554]
+
+        },{
+            name: 'Hamburg',
+            data: [115250,741,3626,195.7,1897]
+
+        },{
+            name: 'Hessen',
+            data: [419559,3784,17569,279.2,8173]
+
+        },{
+            name: 'Mecklenburg-Vorpommern',
+            data: [73688,1537,6729,417.7,1337]
+
+        },{
+            name: 'Niedersachsen',
+            data:	[381715,3481,16.549,206.8,6389]
+
+        },{
+            name: 'Nordrhein-Westfalen',
+            data: [1191138,9084,50668,282.7,19075]
+
+        },{
+            name: 'Rheinland-Pfalz',
+            data: [237282,2613,12690,309.6,4294]
+
+        },{
+            name: 'Saarland',
+            data: [62542,903,4060,412.6,1116]
+
+        },{
+            name: 'Sachsen',
+            data:[513069,10327,47877,1180.1,11079]
+
+        },{
+            name: 'Sachsen-Anhalt',
+            data:[162416,3707,15787,723.9,3820]
+
+        },{
+            name: 'Schleswig-Holstein',
+            data: 	[98142,848,4434,152.3,1803]
+
+        },{
+            name: 'Thueringen',
+            data: [219507,4459,21070,993.8,5053]
+
+        }, {
+            name: 'Gesamt',
+            data: [5977208,73209,365222,439.2,102178]
+
+        }]
+    });
+</script>
+</body>
+</html>
+
