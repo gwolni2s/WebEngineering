@@ -21,7 +21,8 @@
 
 <script>
 export default {
-  data() {
+  name: 'AnalyseInput',
+  data: function() {
     return {
       letters: 0,
       spacess: 0,
