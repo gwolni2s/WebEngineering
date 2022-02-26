@@ -14,13 +14,13 @@ Wie ist eine HTML-Tabelle aufgebaut?
 Im Start tab lässt sich die Größe der Tabelle definieren.
 Dann erstellt man einen header table mit den Überschriften der Spalten,
 die in table header definiert werden. Anschließend werden beliebig viele tables erstellt,
-in denen dann den Inhalt, auch table data festegelgen kann.
+in denen dann der Inhalt, auch table data festegelegt wird.
 
 Welche Konventionen sollte man bei Pfaden und Dateinamen beachten?
 
-<a> definiert einen Hyperlink, gefolgt von href, dem man den Link als Wert übergibt. Wichtig ist,
+href definiert einen Hyperlink, dem man dann den Link als Wert übergibt. Wichtig ist,
 diesen in Anführungsstrichen zu setzen. Weiter gefolgt von Text und dem end Tab.
-Man sollte die komplette URL angeben und eine alternative Beschreibung, falls der Link nicht geladen werden kann.
+Man sollte die komplette URL und eine alternative Beschreibung angeben, falls der Link nicht geladen werden kann.
 
 Wie baut man in HTML ein Menü?
 

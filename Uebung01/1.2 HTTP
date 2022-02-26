@@ -19,7 +19,7 @@ Sie bekommen im Browser den HTTP Status Code 403. Was hat das zu bedeuten? Was k
 
 Der HTTP Status Code 403, bedeutet,
 dass man als Client eine fehlende Zugriffsberechtigung hat.
-Um sich eine Zugriffsberechtigung zu holen, müsste man den Admin der WWW-Seite um Berechtigung bitten.
+Um sich eine Zugriffsberechtigung zu holen, müsste man den Admin der WWW-Seite um eine Berechtigung bitten.
 
 In einer Webanwendung benötigen Sie eine OPTIONS-Anfrage,
 die die Optionen des Servers vor dem eigentlichen Zugriff erfragen soll.
