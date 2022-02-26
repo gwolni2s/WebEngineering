@@ -1,0 +1,20 @@
+Mit welchen fachlichen Argumenten wurde das WWW-Proposal von TBL abgelehnt?
+
+Die Vagheit im Konzept des WWW-Proposals wurde mit der Idee der Evolvierbarkeit verwechselt wurde.
+Außerdem war man zu der Zeit der Ansicht, dass die Hypertext-Community diesbezüglich schon weiter fortgeschritten war
+bzw. mehr erreicht wurde und das Konzept von TBL ein Rückschritt gewesen wäre.
+Außerdem waren Broken Links in TBL's Konzept möglich, die man hätte vermeiden können.
+Technisch wäre dies möglich gewesen, Stichwort 'Referentielle Integrität'.
+
+Was sind die fachlichen Argumente, warum das WWW dennoch ein Erfolg wurde?
+
+Diesbezüglich gibt es verschiedene Sichtweisen und Gründe. Auf der einen Seite, Offenheit, Dezentralität
+und Evolvierbarkeit laut TBL und auf der anderen wissenschaftlichen Seite die mathematische Rigorosität, das Ziel,
+dass alles integer ist und das referentielle Integrität vorhanden ist.
+
+Was wäre der Preis für die garantierte Verhinderung von “broken links”?
+
+Der Preis für referentielle Integrität, um Broken Links zu verhindern,
+wäre ein hoher Ressourcenaufwand seitens der Rechner,
+auf Grund der einzelnen Prüfungen des Datenbankmanagementsystems, wodurch immense Kosten entstehen.
+

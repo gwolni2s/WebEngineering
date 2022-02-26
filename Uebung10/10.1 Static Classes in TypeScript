@@ -1,0 +1,11 @@
+Gibt es in TypeScript statische Klassen?
+Erläutern Sie den Unterschied von TypeScript zu anderen objekt-orientierten,
+statisch typisierten Programmiersprachen wie Java und C#.
+
+Typescript und JavaScript haben keine statischen Klassen,
+wie es bei Java und C# der Fall ist. Das ist bei Java und C# nur der Fall,
+weil alle Daten und Funktionen in der jeweiligen Klasse sein müssen. In TypeScript gibt es diese Bedingung nicht.
+Eine Klasse mit einer einzelnen Instanz wird gewöhnlich als Objekt angesehen.
+Die "statische Klasse" Schreibweise ist unnötig, da ein reguläres Objekt, die gleiche funktionalität bereitstellt.
+
+

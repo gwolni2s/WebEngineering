@@ -1,0 +1,32 @@
+In der Vorlesung wurde ein ArrayWrapper Exploit gezeigt.
+
+Analysieren Sie die Ursache dieses Exploits.
+
+Entwickeln Sie ein Sicherheitskonzept und eine ArrayWrapper-Lösung, die gegen diesen Exploit gewappnet ist.
+
+Geben Sie hier Ihr Ursachenanalyse ein:
+
+Da die push() Funktion überschrieben wird, ist es möglich an das private Array innerhalb des Arraywrappers zu gelangen.
+
+Geben Sie hier Ihr Sicherheitskonzept ein:
+
+Die push() Funktion muss irgendwie isoliert werden, damit sie nicht überschrieben wird.
+
+Geben Sie hier Ihren JS-Code eines sicheren ArrayWrappers ein:
+
+function arrayWrapper() {
+var array; // private
+return {
+ get:function(pos){
+ return array[pos];
+ },
+ set:function(pos,value){
+ array[pos] = value;
+ },
+ protected append:function(value){
+ array.push(value);
+ }
+ }
+}
+
+

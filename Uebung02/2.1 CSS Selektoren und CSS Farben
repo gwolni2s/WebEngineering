@@ -1,0 +1,28 @@
+Berechnen Sie die Spezifität folgender CSS-Selektoren:
+
+div div div:focus  .inner
+h1 + div.main
+div a:link[href*='h-brs']
+nav > a:hover::before
+ul#primary-nav  li.active
+
+1: 23
+2. 12
+3. 22
+4. 13
+5. 112
+
+Rechnen Sie folgende RGB-Werte in HSL-Werte um:
+
+#ffffff
+#000
+#ab0978
+rgb(127,255,33)
+rgba(255,127,33,0.8)
+
+1. (0°,0%,100%)
+2. (0,0,0)
+3. (0.89,0.9,0.35)
+4. (95°,100.0%,56.5%)
+5. (0.07,1.00,0.56)
+

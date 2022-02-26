@@ -1,0 +1,35 @@
+Was ist HTML?
+
+HTML steht für Hyper Text Markup Language.
+HTML ist der Standard für die Erstellung von Webseiten.
+Es enthält mehrere verschiedene Elemente, um die Struktur der Webseite zu beschreiben.
+Außerdem beschreibt HTML, wie die Elemente im Browser dargestellt werden sollen.
+
+Wie kann man eine geschachtelte geordnete Liste der Schachtelungstiefe 3 erzeugen?
+
+Man erstellt eine geordnete Liste in einer geordneten Liste wiederum in einer geordneten Liste.
+
+Wie ist eine HTML-Tabelle aufgebaut?
+
+Im Start tab lässt sich die Größe der Tabelle definieren.
+Dann erstellt man einen header table mit den Überschriften der Spalten,
+die in table header definiert werden. Anschließend werden beliebig viele tables erstellt,
+in denen dann den Inhalt, auch table data festegelgen kann.
+
+Welche Konventionen sollte man bei Pfaden und Dateinamen beachten?
+
+<a> definiert einen Hyperlink, gefolgt von href, dem man den Link als Wert übergibt. Wichtig ist,
+diesen in Anführungsstrichen zu setzen. Weiter gefolgt von Text und dem end Tab.
+Man sollte die komplette URL angeben und eine alternative Beschreibung, falls der Link nicht geladen werden kann.
+
+Wie baut man in HTML ein Menü?
+
+Man erstellt mehrere geschachtelte Listen, die 'responsive' sind. Für die Punkte,
+die im Menü festgehalten werden, hinterlegt man jeweils einen Link, den man durch einen Text umbenennt.
+Klickt man auf Diesen, wird man auf die zugehörige Seite weitergeleitet.
+
+Welche Attribute sollte man bei Bildern wie verwenden?
+
+Neben dem Source Link und der alternativen Textbeschreibung, werden im Attribut style Position,
+Breite und Höhe angegeben.
+

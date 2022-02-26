@@ -1,0 +1,41 @@
+Gegeben sei folgendes fehlerbehaftete JavaScript-Programm.
+Ergänzen Sie dieses um möglichst viele Typisierungen und übersetzen Sie es in ein TypeScript-Programm.
+
+const add = (x,y) => x+y;
+const equals = (x,y) => x===y;
+
+console.log( add(1,2) );
+console.log( add(true, true ) );
+console.log( add(true, false ) );
+var x = y = 1;
+console.log( add(equals(x,y), equals(y,x)) );
+
+Was ist der Fehler in dem gegebenen JavaScript-Code?
+
+Die Variable y muss bevor sie einer anderen Variable zugewiesen wird bzw. deren Wert, deklariert werden.
+
+Geben Sie hier Ihren TypeScript-Code ein:
+
+const add = (x:number,y:number):number => x+y;
+const equals = (x:number,y:number):boolean => x===y;
+
+console.log( add(1,2) );
+console.log( add(true, true ) );
+console.log( add(true, false ) );
+var y: number;
+var x: number = y = 1;
+console.log( add(equals(x,y), equals(y,x)) );
+
+Welche Fehler meldet TypeScript?
+
+Das Argument true bzw false kann der Methode add nicht übergeben werden, da der type number erwartet wird.
+
+Geben Sie weitere Beispiele an, wie TypeScript bei der Fehlersuche helfen kann:
+
+Das gezeigte Beispiel beschrieb die Fehlersuche bei der Übergabe von typisierten Parametern zu typisierten Funktionen.
+Die Fehlersuche kann auch bei der Zuweisung einer Variable aus dem Rückgabewert einer Funktion helfen,
+falls die Typen nicht übereinstimmen.
+Beispiel: var name: String = add(x, y); //Type number als Rückgabewert kann name(String) nicht zugewiesen werden
+
+
+

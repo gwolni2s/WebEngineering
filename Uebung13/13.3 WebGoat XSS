@@ -1,0 +1,12 @@
+Geben Sie hier Ihre Lösungen zu (A7) Cross-Site Scripting (XSS), Cross Site Scripting ein.
+
+1) checkbox true, alert(document.cookie);
+
+2) <script>alert('You are hacked')</script>
+
+3) start.mvc#test/
+
+4) http://localhost:8080/WebGoat/start.mvc#test/<script>webgoat.customjs.phoneHome()<%2Fscript>
+
+5) Correct Anwers: 4, 3, 1, 2, 4
+

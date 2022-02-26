@@ -1,0 +1,32 @@
+Sie bekommen im Browser den HTTP Status Code 200. Was bedeutet das?
+
+Die 2xx HTTP Status Codes bedeuten, dass der Status Erfolgreich ist. Der Status Code 200, dass alles ok ist.
+
+Sie bekommen im Browser den HTTP Status Code 301. Was hat das zu bedeuten?
+
+Der HTTP Status Code 301 bedeutet, dass eine URL dauerhaft ausgetauscht wurde
+und durch eine neue URL ersetzt wurde. Das bedeutet letztendlich,
+dass man zur dann aktuell korrekten URL automatisch weitergeleitet wird.
+
+Sie bekommen im Browser den HTTP Status Code 400. Was hat das zu bedeuten? Was können Sie dagegen tun?
+
+Der HTTP Status Code 400 repräsentiert eine Fehlerhafte Anfrage,
+die 4xx Status Code's stehen für Client Error. Bedeutet,
+der Server konnte eine fehlerhafte Anfrage des Client nicht verarbeiten. Eine Lösungsmöglichkeit wäre,
+die Anfrage auf Syntax Fehler hin zu überprüfen und schließlich zu korrigieren.
+
+Sie bekommen im Browser den HTTP Status Code 403. Was hat das zu bedeuten? Was können Sie dagegen tun?
+
+Der HTTP Status Code 403, bedeutet,
+dass man als Client eine fehlende Zugriffsberechtigung hat.
+Um sich eine Zugriffsberechtigung zu holen, müsste man den Admin der WWW-Seite um Berechtigung bitten.
+
+In einer Webanwendung benötigen Sie eine OPTIONS-Anfrage,
+die die Optionen des Servers vor dem eigentlichen Zugriff erfragen soll.
+Aus Performanzgründen soll die Abfrage jedoch cacheable sein. Wie könnten Sie dafür eine Lösung angehen?
+
+Man könnte die Server-Optionen beim ersten Abfragen temporär speichern.
+Möchte man nun die Server-Optionen Performanz bedingt nicht per Options anfragen,
+kann man mithilfe einer Get Anfrage die temporär gespeicherten Server-Optionen anfragen.
+Die Options-Methode müsste man dann nur einmal verwenden, außer wenn sich die Server-Optionen ändern sollten.
+
