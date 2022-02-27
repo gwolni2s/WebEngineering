@@ -25,25 +25,21 @@ function applyf(f) {
         }
     }
 }
+const result = applyf(add);
+console.log("Result: " + result(4)(7));
+
 // curry (currying) function
-function curry(op, x) {
+function curry(f, x) {
     return (y) => {
-        if(op === "add") {
-            return x + y;
-        }
-        if(op === "mul") {
-            return x * y;
-        }
-        if(op === "inc") {
-            y = 1;
-            return x + y;
-        }
+        return f(x, y);
     }
 }
+//curry test
+console.log("Curry mit 3 und 4 ergibt: " + curry(add, 3)(4));
+
 // inc function with add function
-const inc = addf(0);
-const x = inc(1);
-console.log(x);
+const inc = curry(add, 1);
+console.log("inc Funktion auf 6 angewendet ergibt: " + inc(6));
 
 //methodize and demethodize from https://jsfiddle.net/daronwolff/o9u39hmr/
 function methodize(f) {
@@ -52,14 +48,14 @@ function methodize(f) {
     }
 }
 Number.prototype.add = methodize(add);
-console.log((3).add(4));
+console.log("Funktion methodize mit 3 und 4 ergibt: " + (3).add(4));
 
 function demethodize(f) {
     return function(x,y) {
         return f.call(x,y);
     };
 }
-console.log(demethodize(Number.prototype.add)(5,6));
+console.log("Funktion demethodize ergibt mit 5 und 6: " + demethodize(Number.prototype.add)(5,6));
 
 //twice function
 function twice (f) {
@@ -67,10 +63,10 @@ function twice (f) {
         return f(x, x);
     }
 }
-const double = twice(add);
 const square = twice(mul);
-const y = double(11);
-console.log(y);
+const double = twice(add);
+console.log("Twice mit mul und 11 ergibt: " + square(11));
+
 
 // composeu function
 function composeu(f, h) {
@@ -79,7 +75,7 @@ function composeu(f, h) {
     }
 }
 const compose = composeu(double, square)(4);
-console.log(compose);
+console.log("ComposeU mit double und square mit 4 ergibt: " + compose);
 
 // composeb function
 function composeb(f, h) {
@@ -89,7 +85,7 @@ function composeb(f, h) {
 }
 
 const compob = composeb(add, mul)(2,3,5);
-console.log(compob);
+console.log("ComposeB mit add und mul mit 2, 3, und 5 ergibt: " + compob);
 
 // once function
 function once(f) {
@@ -106,18 +102,18 @@ function once(f) {
 
 const a = once(add);
 
-console.log(a(3, 4));
-//console.log(a(5, 6));
+console.log("Funktion once mit 3 und 4 ergibt beim ersten Mal: " + a(3, 4));
+console.log("Funktion once mit 5 und 6 ergibt beim zweiten Mal: " + a(5, 6));
 
 // counterf function
 function counterf(x) {
     var obj = {
         counter: x,
         inc: () => {
-            return x += 1;
+            return x = x + 1;
         },
         dec: () => {
-            return x -= 1;
+            return x = x - 1;
         },
         value: () => {
             return x;
@@ -127,24 +123,22 @@ function counterf(x) {
 }
 
 const counterF = counterf(10);
-console.log(counterF.value());
+console.log("Funktion counterF hat den aktuellen Wert: " + counterF.value());
 
-const counterInc = counterF.inc();
-console.log(counterInc);
+console.log("Funktion counterF nach .inc Aufruf hat den Wert: " + counterF.inc());
 
-const counterDec = counterF.dec();
-console.log(counterDec);
+console.log("Funktion counterF nach .dec Aufruf hat den Wert: " + counterF.dec());
 
 // revocable function
 function revocable(f) {
-    var revok = false;
-    var obj = {
+    let revok = false;
+    const obj = {
         revoked: revok,
         invoke: (x) => {
-            if(!revok) {
+            if (!revok) {
                 return f(x);
             } else {
-                return f("Error");
+                return f("Error: function is already revoked");
             }
         },
         revoke: () => {
