@@ -9,5 +9,10 @@ function car(label, model, person) {
     this.person = person;
 }
 function conflict(car) {
-    return car.person.length === 1;
+    if (car.person.length === 1) {
+        return true;
+    } else {
+        return false;
+    };
 }
+
