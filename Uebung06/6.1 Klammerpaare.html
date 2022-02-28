@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Klammerpaare</title>
+</head>
+<body>
+    <input id="input1" type="text">
+
+    <script>
+        let round = 0;
+        let curly = 0;
+        let square = 0;
+        const text = document.querySelector('input1').value;
+        text.addEventListener('onchange', () => {
+            if(round != 0 || curly != 0 || square != 0) {
+                text.style.backgroundColor = "red";
+            } else {
+                text.style.backgroundColor = "green";
+            }
+            for(let i = 0; i < text.length; i++) {
+                switch (text[i]) {
+                    case "(":
+                        round++;
+                        break;
+                    case "{":
+                        curly++;
+                        break;
+                    case "[":
+                        square++;
+                        break;
+                    case ")":
+                        round--;
+                        break;
+                    case "}":
+                        curly--;
+                        break;
+                    case "]":
+                        square--;
+                        break;
+                    default:
+                        continue;
+                }
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
