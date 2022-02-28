@@ -15,4 +15,3 @@ function conflict(car) {
         return false;
     };
 }
-

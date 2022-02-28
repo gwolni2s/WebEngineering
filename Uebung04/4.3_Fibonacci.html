@@ -7,14 +7,21 @@
 <body>
 <script>
     //Fibonacci from w3schools and stack overflow
-    var i;
-    var fib = [];
-    fib[0] = 0;
-    fib[1] = 1;
-    for(i = 2; i <= 5000; i++) {
-        fib[i] = fib[i - 2] + fib[i - 1];
+    const fib = [];
+    fib[0] = BigInt(0);
+    fib[1] = BigInt(1);
+    for(let i = 2; i <= 2000; i++) {
+        fib[i] = BigInt(fib[i - 2]) + BigInt(fib[i - 1]);
+    }
+    console.log("The Finonacci series: ");
+    for(let i = 0; i <= 2000; i++) {
         console.log(fib[i]);
     }
+
+    /**
+     * Max Safe Integer: 927372692193079200000
+     * Max Value: 1.3069892237633987e+308
+     */
 </script>
 </body>
 </html>
