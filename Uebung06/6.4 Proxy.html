@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Übung 6.4</title>
+    <a>Source: Solutions from WE App</a>
+</head>
+<body>
+
+<h1 id="header">Eingabe von Relation</h1>
+<form>
+    <label for="textField">Neuer Vorrang durch Komma getrennt</label>
+    <input type="text" id="textField" name="textField" >
+    <!--onclick="addItemToList()" -->
+    <button id ="btn" onclick="createEdges()" > Hinzufügen</button>
+</form>
+<ul id = "list"></ul>
+
+<button id ="reihenfolge" onclick="determineOrder()" > Reihenfolge bestimmen</button>
+<ul id = "listErg"></ul>
+<script>
+
+
+
+    let listOfEdges = [];
+
+    function determineOrder(){
+        const rel = new Vorrang(listOfEdges);
+        document.getElementById("listErg").innerHTML ="";
+        for(const node of rel){
+            const newItem = document.createElement("li");
+            newItem.textContent = node;
+            document.getElementById("listErg").appendChild(newItem);
+        }
+    }
+
+    function createEdges(){
+        event.preventDefault();
+        const input = document.getElementById("textField").value;
+        document.getElementById("textField").value = "";
+        const array = input.split(",");
+        listOfEdges.push(array);
+        const newItem = document.createElement("li");
+        newItem.textContent = array;
+        document.getElementById("list").appendChild(newItem);
+    }
+
+    class Vorrang {
+
+        constructor(edges) {
+            this.numNodes = 0;
+            this.order = [];
+            this.edges = edges;
+            this.nodes = {};
+            this.edges.forEach(
+                v =>{
+                    if(!this.nodes[[v[0]]]) {
+                        this.nodes[v[0]] = makeNode(v[0]); // create node if doesn't exist in nodes
+                        this.numNodes++;
+                    }
+                    if(!this.nodes[[v[1]]]) {
+                        this.nodes[v[1]] = makeNode(v[1]);
+                        this.numNodes++;
+                    } // create node if doesn't exist in nodes
+                    this.nodes[v[1]].predecessor.push(v[0]);                   // add predecessor to the list
+                    this.nodes[v[0]].successor.push(v[1]);                     // add successor to the list
+                }
+            );
+
+            // create a node with an id, list of predecesors and successors
+            function makeNode(id){
+                let newNode = {id: id, predecessor : [], successor: []};
+                newNode.toString = function(){
+                    return `${this.id}`;
+                }
+                newNode.noPredecessor = function(){
+                    return this.predecessor.length === 0;
+                }
+                return newNode;
+            }
+        }
+
+        //add nodes that don't have a predecessor
+        static #addNodesToQueue(nodes){
+            let queue = [];
+            Object.keys(nodes).forEach(
+                k => {
+                    if(nodes[k].noPredecessor()) queue.push(nodes[k]);
+                }
+            );
+            return queue;
+        }
+
+        // Iterator
+        * [Symbol.iterator]() {
+            let queue = Vorrang.#addNodesToQueue(this.nodes);
+            this.order = [];
+            const handler = {
+                get(target, property, receiver) {
+                    if (property === "order") {
+                        console.log(`Es wurden ${target.numNodes - target.order.length -1} Knoten noch nicht sortiert.`);
+                        console.log(target.nodes.propertyName);
+                    }
+                    return target[property];
+                }
+            };
+            let proxy = new Proxy(this, handler);
+            while(queue.length !== 0){
+                const id = queue.pop().id;
+                const listSuccessor = proxy.nodes[id].successor;
+                proxy.nodes[id].predecessor = -1;                 //delete node
+
+                listSuccessor.forEach(                      //delete the deleted predecessor for each successor
+                    s => {
+                        proxy.nodes[s].predecessor.splice(s,1);
+                        if(proxy.nodes[s].noPredecessor()){
+                            queue.push(proxy.nodes[s]);
+                        }
+                    }
+                )
+                proxy.order.push(proxy.nodes[id].toString());
+                yield proxy.nodes[id];
+            }
+        }
+
+
+    }
+
+    // Tests
+    let vorrang1 = new Vorrang([ ["1a","2a"], ["2a","3a"], ["2a","4a"], ["4a","5a"], ["3a","5a"]]);
+    const expectedVorrang1 = [ "1a", "2a", "4a", "3a", "5a" ];
+    const hallo = vorrang1.nodes;
+
+    let i = 0;
+    for(const node of vorrang1){
+        console.assert(expectedVorrang1[i++] == node.toString());
+    }
+    console.assert(i === 5);
+
+    const studentenLeben = new Vorrang([ ["schlafen", "studieren"], ["essen", "laufen"], ["prüfen", "essen"], ["studieren", "prüfen"] ]);
+    const expectedStudentenLeben = ["schlafen", "studieren", "prüfen", "essen", "laufen"];
+
+    i = 0;
+    for ( const node of studentenLeben ){
+        console.assert(expectedStudentenLeben[i++] == node.toString());
+    }
+    console.assert(i=== 5);
+    console.log("HALLO");
+
+</script>
+
+
+
+</body>
+</html>

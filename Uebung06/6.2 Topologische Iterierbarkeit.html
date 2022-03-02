@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Übung 6.2</title>
+    <a>Source: Solutions from WE App</a>
+</head>
+<body>
+
+<h1 id="header">Eingabe von Relation</h1>
+<form>
+    <label for="textField">Neuer Vorrang durch Komma getrennt</label>
+    <input type="text" id="textField" name="textField" >
+    <!--onclick="addItemToList()" -->
+    <button id ="btn" onclick="createEdges()" > Hinzufügen</button>
+</form>
+<ul id = "list"></ul>
+
+<button id ="reihenfolge" onclick="determineOrder()" > Reihenfolge bestimmen</button>
+<ul id = "listErg"></ul>
+<script>
+
+    let listOfEdges = [];
+
+    function determineOrder(){
+        const rel = new Vorrang(listOfEdges);
+        for(const node of rel){
+            const newItem = document.createElement("li");
+            newItem.textContent = node;
+            document.getElementById("listErg").appendChild(newItem);
+        }
+    }
+
+    function createEdges(){
+        event.preventDefault();
+        const input = document.getElementById("textField").value;
+        document.getElementById("textField").value = "";
+        const array = input.split(",");
+        listOfEdges.push(array);
+        const newItem = document.createElement("li");
+        newItem.textContent = array;
+        document.getElementById("list").appendChild(newItem);
+    }
+
+    class Vorrang {
+
+        constructor(edges) {
+            this.edges = edges;
+            this.nodes = {};
+            this.edges.forEach(
+                v =>{
+                    if(!this.nodes[[v[0]]]) this.nodes[v[0]] = makeNode(v[0]); // create node if doesn't exist in nodes
+                    if(!this.nodes[[v[1]]]) this.nodes[v[1]] = makeNode(v[1]); // create node if doesn't exist in nodes
+                    this.nodes[v[1]].predecessor.push(v[0]);                   // add predecessor to the list
+                    this.nodes[v[0]].successor.push(v[1]);                     // add successor to the list
+                }
+            );
+
+            // create a node with an id, list of predecesors and successors
+            function makeNode(id){
+                let newNode = {id: id, predecessor : [], successor: []};
+                newNode.toString = function(){
+                    return `${this.id}`;
+                }
+                newNode.noPredecessor = function(){
+                    return this.predecessor.length === 0;
+                }
+                return newNode;
+            }
+        }
+
+        //add nodes that don't have a predecessor
+        static #addNodesToQueue(nodes){
+            let queue = [];
+            Object.keys(nodes).forEach(
+                k => {
+                    if(nodes[k].noPredecessor()) queue.push(nodes[k]);
+                }
+            );
+            return queue;
+        }
+
+        // Iterator
+        [Symbol.iterator]() {
+            let that = this;
+            let queue = Vorrang.#addNodesToQueue(that.nodes);
+            return {
+                next() {
+                    if(queue.length === 0){
+                        return {done: true};
+                    }
+                    const id = queue.pop().id;
+                    const listSuccessor = that.nodes[id].successor;
+                    that.nodes[id].predecessor = -1;                 //delete node
+
+                    listSuccessor.forEach(                      //delete the deleted predecessor for each successor
+                        s => {
+                            that.nodes[s].predecessor.splice(s,1);
+                            if(that.nodes[s].noPredecessor()){
+                                queue.push(that.nodes[s]);
+                            }
+                        }
+                    )
+                    return {
+                        value:[that.nodes[id]],
+                        done: false
+                    };
+                }
+            }
+        }
+    }
+
+</script>
+
+
+
+</body>
+</html>
