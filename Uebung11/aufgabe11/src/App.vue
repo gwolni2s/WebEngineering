@@ -3,7 +3,7 @@
     <navbar></navbar>
     <sidenav></sidenav>
     <sidebar></sidebar>
-    <main></main>
+    <mainContent></mainContent>
   </div>
 </template>
 
@@ -14,12 +14,15 @@
 import sidenav from './components/sidenav'
 import sidebar from './components/sidebar'
 import navbar from'./components/navbar'
-import main from './components/main'
+import mainContent from './components/main'
 
 export default {
   name: 'App',
   components: {
-    sidenav, sidebar, navbar, main
+    navbar,
+    sidenav,
+    sidebar,
+    mainContent
   }
 }
 </script>

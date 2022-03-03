@@ -1,4 +1,5 @@
 <template>
+  <body>
   <nav>
     <div class="logo">
       <h1>
@@ -22,6 +23,7 @@
       <div class="line3"></div>
     </div>
   </nav>
+  </body>
 </template>
 
 <script>
@@ -221,7 +223,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 * {
   margin: 0px;
   padding: 0px;
@@ -269,11 +271,88 @@ nav {
   margin: 5px;
   transition: all 0.3s ease;
 }
-
-
+side-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  font-family: 'Poppins', sans-serif;
+}
+.side-nav-links {
+  display: flex;
+  justify-content: space-around;
+}
+.side-nav-links {
+  position: absolute;
+  left: 0px;
+  height: 92vh;
+  top: 8vh;
+  background-color: #9C5E5E;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 10%;
+}
+.side-nav-links li {
+  list-style: none;
+}
+.side-nav-links a {
+  color: #d4d3d3;
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-weight: bold;
+  font-size: 14px;
+}
+.side-bar {
+  position: absolute;
+  right: 0px;
+  height: 92vh;
+  top: 8vh;
+  background-color: #9C5E5E;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 20%;
+}
+.side-bar a {
+  color: #d4d3d3;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 10px;
+}
+.main {
+  position: absolute;
+  height: 92vh;
+  top: 8vh;
+  right: 20%;
+  left: 10%;
+  padding: 20px;
+}
+.main-heading {
+  text-transform: uppercase;
+  font-size: 32px;
+}
+.main-paragraph {
+  font-size: 20px;
+}
+.image {
+  height: 45vh;
+  top:8vh;
+  right: 25%;
+  left: 15%;
+  padding: 10px;
+}
 @media screen and (max-width: 1024px) {
   .nav-links {
     width: 45%;
+  }
+  .side-nav-links {
+    width: 20%;
+  }
+  .main {
+    left: 20%;
   }
 }
 @media screen and (max-width: 768px) {
@@ -293,12 +372,24 @@ nav {
     transform: translateX(100%);
     transition: transform 0.5s ease-in;
   }
-
+  .side-bar {
+    width: 30%;
+  }
   .nav-links li {
     opacity: 0;
   }
   .burger {
     display: block;
+  }
+  .side-nav-links {
+    width: 20%;
+  }
+  .sidebar-active {
+    opacity: 0;
+  }
+  .main {
+    left: 20%;
+    right: 30%;
   }
 }
 .nav-active {

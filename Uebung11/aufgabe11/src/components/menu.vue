@@ -17,57 +17,6 @@
   <a>Quelle: https://github.com/lookacat/vue-blob-menu-animation/blob/main/src/components/BlobMenu.vue</a>
 </template>
 
-<style lang="scss" scoped>
-.blob-menu {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-.list {
-  position: relative;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  list-style-type: none;
-  width: 100px;
-  display: flex;
-  flex-direction: column;
-
-  li {
-    position: relative;
-    cursor: pointer;
-    text-align: center;
-    display: list-item;
-    padding: 10px;
-    transition: all 4s;
-    z-index: 0;
-    a {
-      color: white;
-      font-size: 17px;
-      z-index: 5;
-    }
-  }
-  .inactive {
-    padding: 10px;
-    background: white;
-  }
-  .active {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border: 3px solid white;
-    background: rgba(255, 118, 163, 0.1);
-    z-index: -1;
-    transition: transform 0.2s cubic-bezier(0.51, 0.06, 0.56, 1.37);
-    border-radius: 5px;
-  }
-}
-</style>
-
 <script>
 export default {
   name: "BlobMenu",
