@@ -7,10 +7,11 @@ https://wiki.selfhtml.org/wiki/CSS/Tutorials/Einstieg/Media_Queries#Desktop_firs
 -->
 
 <head>
-    <meta name="viewport" conetnt="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <style>
         body {
             display: grid;
+            width: auto;
             height: 100vh;
             grid-template: auto 1fr auto / auto 1fr auto
         }
@@ -46,7 +47,7 @@ https://wiki.selfhtml.org/wiki/CSS/Tutorials/Einstieg/Media_Queries#Desktop_firs
         .right-sidebar,
         main,
         header {
-            padding: 1rem;
+            padding: 2rem;
         }
         
         @media all and (max-width: 800px) {
