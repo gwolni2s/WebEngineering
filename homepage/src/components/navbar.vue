@@ -255,7 +255,7 @@ nav a:hover {
   text-align: center;
 }
 /* Medium devices (landscape tablets, 768px and down) */
-@media only screen and (max-width: 833px) {
+@media only screen and (max-width: 768px) {
   #navbar_desktop {
     display: none;
   }
