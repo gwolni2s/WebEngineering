@@ -1,12 +1,12 @@
 <template>
   <div>
-    This is Home View
+    This is positioning Task
   </div>
 </template>
 
 <script>
 export default {
-  name: "HomeView"
+  name: "positioning"
 }
 </script>
 

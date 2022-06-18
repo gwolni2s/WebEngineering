@@ -1,12 +1,12 @@
 <template>
   <div>
-    This is Home View
+    This is html literature Task
   </div>
 </template>
 
 <script>
 export default {
-  name: "HomeView"
+  name: "HTML_literature"
 }
 </script>
 

@@ -1,12 +1,12 @@
 <template>
   <div>
-    This is Home View
+    This is injection Task
   </div>
 </template>
 
 <script>
 export default {
-  name: "HomeView"
+  name: "injection"
 }
 </script>
 

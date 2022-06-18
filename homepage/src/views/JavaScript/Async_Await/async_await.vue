@@ -1,12 +1,12 @@
 <template>
   <div>
-    This is Home View
+    This is async await Task
   </div>
 </template>
 
 <script>
 export default {
-  name: "HomeView"
+  name: "async_await"
 }
 </script>
 

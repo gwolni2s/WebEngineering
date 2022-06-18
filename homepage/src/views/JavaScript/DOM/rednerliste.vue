@@ -1,12 +1,12 @@
 <template>
   <div>
-    This is Home View
+    This is rednerliste task
   </div>
 </template>
 
 <script>
 export default {
-  name: "HomeView"
+  name: "rednerliste"
 }
 </script>
 

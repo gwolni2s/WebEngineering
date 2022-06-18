@@ -1,12 +1,12 @@
 <template>
   <div>
-    This is Home View
+    This is async category
   </div>
 </template>
 
 <script>
 export default {
-  name: "HomeView"
+  name: "async_category"
 }
 </script>
 

@@ -1,12 +1,12 @@
 <template>
   <div>
-    This is Home View
+    This is selectors and colors Task
   </div>
 </template>
 
 <script>
 export default {
-  name: "HomeView"
+  name: "selectors_colors"
 }
 </script>
 

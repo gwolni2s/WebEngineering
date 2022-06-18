@@ -1,12 +1,12 @@
 <template>
   <div>
-    This is Home View
+    This is vue category page
   </div>
 </template>
 
 <script>
 export default {
-  name: "HomeView"
+  name: "vue_category"
 }
 </script>
 

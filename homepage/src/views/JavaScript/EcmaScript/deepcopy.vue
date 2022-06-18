@@ -1,12 +1,12 @@
 <template>
   <div>
-    This is Home View
+    This is deepcopy task
   </div>
 </template>
 
 <script>
 export default {
-  name: "HomeView"
+  name: "deepcopy"
 }
 </script>
 

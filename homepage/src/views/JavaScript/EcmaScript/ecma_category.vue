@@ -1,12 +1,12 @@
 <template>
   <div>
-    This is Home View
+    This is ecma category
   </div>
 </template>
 
 <script>
 export default {
-  name: "HomeView"
+  name: "ecma_category"
 }
 </script>
 

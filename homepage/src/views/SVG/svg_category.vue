@@ -1,12 +1,12 @@
 <template>
   <div>
-    This is Home View
+    This is svg category
   </div>
 </template>
 
 <script>
 export default {
-  name: "HomeView"
+  name: "svg_categroy"
 }
 </script>
 

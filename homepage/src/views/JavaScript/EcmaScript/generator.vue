@@ -1,12 +1,12 @@
 <template>
   <div>
-    This is Home View
+    This is generator task
   </div>
 </template>
 
 <script>
 export default {
-  name: "HomeView"
+  name: "generator"
 }
 </script>
 

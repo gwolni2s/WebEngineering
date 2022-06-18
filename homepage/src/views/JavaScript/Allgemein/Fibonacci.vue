@@ -1,12 +1,12 @@
 <template>
   <div>
-    This is Home View
+    This is fibonacci task
   </div>
 </template>
 
 <script>
 export default {
-  name: "HomeView"
+  name: "Fibonacci"
 }
 </script>
 

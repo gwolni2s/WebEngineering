@@ -1,12 +1,12 @@
 <template>
   <div>
-    This is Home View
+    This is promises task
   </div>
 </template>
 
 <script>
 export default {
-  name: "HomeView"
+  name: "promises"
 }
 </script>
 

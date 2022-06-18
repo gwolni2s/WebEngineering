@@ -1,12 +1,12 @@
 <template>
   <div>
-    This is Home View
+    This is static classes Task
   </div>
 </template>
 
 <script>
 export default {
-  name: "HomeView"
+  name: "static_classes"
 }
 </script>
 

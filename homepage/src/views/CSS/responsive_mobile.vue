@@ -1,12 +1,12 @@
 <template>
   <div>
-    This is Home View
+    This is responsive mobile Task
   </div>
 </template>
 
 <script>
 export default {
-  name: "HomeView"
+  name: "responsive_mobile"
 }
 </script>
 

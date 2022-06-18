@@ -1,12 +1,12 @@
 <template>
   <div>
-    This is Home View
+    This is sxx task
   </div>
 </template>
 
 <script>
 export default {
-  name: "HomeView"
+  name: "xss"
 }
 </script>
 

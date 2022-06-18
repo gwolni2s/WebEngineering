@@ -1,12 +1,12 @@
 <template>
   <div>
-    This is Home View
+    This is functional category
   </div>
 </template>
 
 <script>
 export default {
-  name: "HomeView"
+  name: "functional_category"
 }
 </script>
 

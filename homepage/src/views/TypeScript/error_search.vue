@@ -1,12 +1,12 @@
 <template>
   <div>
-    This is Home View
+    This is error search Task
   </div>
 </template>
 
 <script>
 export default {
-  name: "HomeView"
+  name: "error_search"
 }
 </script>
 

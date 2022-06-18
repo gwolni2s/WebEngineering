@@ -1,12 +1,12 @@
 <template>
   <div>
-    This is Home View
+    This is php category
   </div>
 </template>
 
 <script>
 export default {
-  name: "HomeView"
+  name: "php_category"
 }
 </script>
 
