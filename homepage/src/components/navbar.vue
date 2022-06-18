@@ -1,6 +1,5 @@
 <template>
-  <header>
-    <div id="navbar">
+    <div id="navbar_desktop">
         <nav>
           <div>
             <h2>Solution Navigator</h2>
@@ -103,29 +102,72 @@
           </div>
           <router-link to="/profile">Profile</router-link>
         </nav>
+      <!-- ToDo: develop navbar for mobile view -->
     </div>
-  </header>
+    <div id="navbar_mobile">
+      <nav>
+        <div>
+          <h2>Solution Navigator</h2>
+        </div>
+        <div @click="toggleBurger()" id="burger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+      <side-nav id="sidenav">
+        <div class="mobile_sidenav" @click="toggleBurger()">
+          <router-link to="/">Home</router-link>
+          <router-link to="/HTTP_HTML">HTML</router-link>
+          <router-link to="/CSS">CSS</router-link>
+          <router-link to="/JavaScript">JavaScript</router-link>
+          <router-link to="/SVG">SVG</router-link>
+          <router-link to="/TypeScript">TypeScript</router-link>
+          <router-link to="/Vue">Vue</router-link>
+          <router-link to="/PHP">PHP</router-link>
+          <router-link to="/WebSecurity">Web Security</router-link>
+          <router-link to="/profile">Profile</router-link>
+        </div>
+      </side-nav>
+    </div>
 </template>
 
 <script>
 export default {
-  name: "navbar"
+  name: "navbar",
+  methods: {
+    toggleBurger() {
+      const burger = document.querySelector("#burger");
+      burger.classList.toggle("active");
+      const sidenav = document.getElementById('sidenav');
+      sidenav.classList.toggle("active");
+    }
+  }
 }
 </script>
 
 <style scoped>
-#navbar {
+
+#navbar_mobile {
+  display: none;
+}
+#navbar_desktop, #navbar_mobile {
   width: 100%;
   background-color: black;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
-
 nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 30px;
+  padding: 0 30px;
 }
+
 #dropdown_list_js div {
   display: flex;
   flex-direction: row;
@@ -138,33 +180,88 @@ nav {
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
-
 #dropdown_list a, #dropdown_list_js a {
   color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
 }
-
 #dropdown_list a:hover, #dropdown_list_js a:hover {
   background-color: #aadcef;
 }
 .dropdown:hover #dropdown_list, .dropdown:hover #dropdown_list_js {
   display: block;
 }
-
 nav div h2 {
   color: white;
 }
-
 nav a {
   text-decoration: none;
   color: white;
 }
-
 nav a:hover {
   color: #00afea;
   border-color: #00afea;
 }
+#burger span {
+  display: block;
+  width: 28px;
+  height: 2px;
+  border-radius: 9999px;
+  background-color: white;
+}
+#burger span:not(:last-child) {
+  margin-bottom: 7px;
+}
+#burger, #burger span {
+  transition: all .4s ease-in-out;
+}
+#burger.active {
+  transition-delay: 1ms;
+  transform: rotate(45deg);
+}
 
+#burger.active span:nth-child(2) {
+  width: 0;
+}
+#burger.active span:nth-child(1),
+#burger.active span:nth-child(3) {
+  transition-delay: .5ms;
+}
+#burger.active span:nth-child(1) {
+  transform: translateY(9px);
+}
+#burger.active span:nth-child(3) {
+  transform: translateY(-9px) rotate(90deg);
+}
+#sidenav {
+  display: none;
+}
+#sidenav.active {
+  display: block;
+  transition-delay: 1s;
+}
+#sidenav {
+  overflow: hidden;
+  background-color: #333;
+  position: relative;
+}
+#sidenav .mobile_sidenav a {
+  color: white;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  display: block;
+  text-align: center;
+}
+/* Medium devices (landscape tablets, 768px and down) */
+@media only screen and (max-width: 833px) {
+  #navbar_desktop {
+    display: none;
+  }
+  #navbar_mobile {
+    display: flex;
+    flex-direction: column;
+  }
+}
 </style>
