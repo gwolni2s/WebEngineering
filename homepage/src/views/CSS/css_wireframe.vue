@@ -1,7 +1,58 @@
 <template>
-  <div>
-    This is css wireframe Task
+  <head>
+    <title>Survey Form</title>
+  </head>
+  <body>
+  <h1>Survey Form</h1>
+  <p>Let us know how we can improve freeCodeCamp</p>
+  <div class="data">
+    <form action="/action_page.php">
+      * Name: <input type="text" id="fname" name="firstname" placeholder="Enter your name"><br><br>
+      * Email: <input type="text" id="mail" name="mail" placeholder="Enter your Email"><br><br>
+      * Age: <input type="number" id="age" name="age" placeholder="Age"><br><br>
+    </form>
   </div>
+  <div>
+    <a>Which option best describes your current role?</a>
+    <select id="Role" name="Role">
+      <option >Student</option>
+    </select>
+  </div>
+  <div>
+    <br>
+    <a>* How likely is that you would recommend<br>freeCodeCamp to a friend?</a>
+    <br><br>
+    <input type="checkbox" id="box1" name="box1">
+    <label for="box1">Definitely</label>
+    <br><br>
+    <input type="checkbox" id="box2" name="box2">
+    <label for="box2">Maybe</label>
+    <br><br>
+    <input type="checkbox" id="box3" name="box3">
+    <label for="box3">Not Sure</label>
+    <br>
+  </div>
+  <div>
+    <br>
+    <a>What do you like most in FCC:</a>
+    <select id="Option" name="Option">
+      <option >Select an option</option>
+    </select>
+    <br><br>
+    <a>Things hat should be improved in the future<br>(Check all that apply):</a>
+    <br><br>
+    <input type="checkbox" id="box4" name="box4">
+    <label for="box4">Front-end Projects</label>
+    <br><br>
+    <input type="checkbox" id="box5" name="box5">
+    <label for="box5">Back-end Projects</label>
+    <br><br>
+    <input type="checkbox" id="box6" name="box6">
+    <label for="box6">Data Visualization</label>
+    <br>
+  </div>
+  <br>
+  </body>
 </template>
 
 <script>
@@ -12,4 +63,38 @@ export default {
 
 <style scoped>
 
+input[type=text], select {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+input[type=number], select {
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+h1 {
+  background-color: #b2d6d1;
+  text-align: center;
+  padding: 20px;
+}
+body {
+  width: auto;
+  height: auto;
+  border-style: solid;
+  border-width: 0px 30px 70px 30px;
+  border-color: #b2d6d1;
+  font-family: 'Trebuchet MS', sans-serif;
+}
+div, p {
+  text-align: center;
+}
 </style>

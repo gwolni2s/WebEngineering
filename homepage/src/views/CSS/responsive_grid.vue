@@ -1,7 +1,48 @@
 <template>
-  <div>
-    This is responsive grid Task
-  </div>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Resposive Grid</title>
+  </head>
+
+  <body class="example">
+  <header>
+    <ul class="navigation">
+      <a>The book series</a>
+      <a>Testimonials</a>
+      <a>The Author</a>
+      <a>Free resources</a>
+    </ul>
+  </header>
+  <main>
+    <h1 style="color: black; text-align: center;">
+      You dont know JavaScript
+    </h1>
+    <div class="container">
+      <div class=".flex-item-left">
+        <img src="https://kaul.inf.h-brs.de/we/assets/img/landing-img.png" alt="JavaScript-Book" style="width:70%;">
+      </div>
+      <div class=".flex-item-right" style="color: black; font-size: 150%; align-self: center;">
+        <p>Don't just drift through Javascript.</p>
+        <br>
+        <p>Understand how JavaScript works</p>
+        <br>
+        <p>Start your journey through the bumpy side of Javascript</p>
+        <button class="button button" style="width: 100%;">
+          ORDER YOUR COPY NOW
+        </button>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <br>
+    <h3 style="color: white">
+      The first ebook in the book series is absolutely free.
+    </h3>
+    <button class="button button">
+      FIND OUT MORE ABOUT THIS OFFER
+    </button>
+  </footer>
+  </body>
 </template>
 
 <script>
@@ -11,5 +52,103 @@ export default {
 </script>
 
 <style scoped>
+* {
+  box-sizing: border-box;
+}
 
+body {
+  display: grid;
+  height: fit-content;
+  grid-template-rows: 5% auto 15%;
+  margin: 0%;
+}
+
+header {
+  background: rgb(53, 49, 49);
+  grid-column: 1 / 4;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  justify-content: space-evenly;
+  margin: 15px;
+}
+
+.navigation {
+  display: flex;
+  justify-self: center;
+  justify-content: space-around;
+}
+
+a {
+  color: white;
+}
+
+main {
+  background: rgb(204, 201, 201);
+  grid-column: 1 / 4;
+}
+
+.flex-item-left {
+  flex: 50%;
+}
+
+.flex-item-right {
+  flex: 50%;
+}
+
+footer {
+  background: hsl(240, 66%, 13%);
+  text-align: center;
+  grid-column: 1 / 4;
+}
+
+.button {
+  background-color: orange;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  display: inline-block;
+  margin: 2px;
+  border: none;
+  width: 50%;
+}
+
+.content {
+  text-align: center;
+  color: black;
+}
+
+.button {
+  border-radius: 8px;
+}
+/*
+Hide Scrollbar with code from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_hide_scrollbar_keep_func
+*/
+
+.example {
+  overflow-y: scroll;
+  /* Add the ability to scroll */
+}
+/* Hide scrollbar for Chrome, Safari and Opera */
+
+.example::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+
+.example {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+
+@media all and (max-width: 800px) {
+  .container {
+    flex-direction: column;
+  }
+}
 </style>

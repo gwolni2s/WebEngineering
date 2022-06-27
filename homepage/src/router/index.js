@@ -28,13 +28,14 @@ const router = createRouter({
     { path: '/HTTP_HTML/Task2', name: 'http', component: () => import('../views/HTML_HTTP/HTTP.vue')},
     { path: '/HTTP_HTML/Task3', name: 'html_literature', component: () => import('../views/HTML_HTTP/HTML_literature.vue')},
     { path: '/HTTP_HTML/Task4', name: 'html_wireframe', component: () => import('../views/HTML_HTTP/HTML_wireframe.vue')},
-      // CSS Tasks
+      // CSS Tasksx
     { path: '/CSS/Task1', name: 'selectors_colors', component: () => import('../views/CSS/selectors_colors.vue')},
-    { path: '/CSS/Task2', name: 'positioning', component: () => import('../views/CSS/positioning.vue')},
-    { path: '/CSS/Task3', name: 'css_wireframe', component: () => import('../views/CSS/css_wireframe.vue')},
-    { path: '/CSS/Task4', name: 'flexbox_desktop', component: () => import('../views/CSS/responsive_desktop.vue')},
-    { path: '/CSS/Task5', name: 'flexbox_mobile', component: () => import('../views/CSS/responsive_mobile.vue')},
-    { path: '/CSS/Task6', name: 'responsive_grid', component: () => import('../views/CSS/responsive_grid.vue')},
+    { path: '/CSS/Task2', name: 'positioning_1', component: () => import('../views/CSS/positioning_1.vue')},
+    { path: '/CSS/Task3', name: 'positioning_2', component: () => import('../views/CSS/positioning_2.vue')},
+    { path: '/CSS/Task4', name: 'css_wireframe', component: () => import('../views/CSS/css_wireframe.vue')},
+    { path: '/CSS/Task5', name: 'flexbox_desktop', component: () => import('../views/CSS/responsive_desktop.vue')},
+    { path: '/CSS/Task6', name: 'flexbox_mobile', component: () => import('../views/CSS/responsive_mobile.vue')},
+    { path: '/CSS/Task7', name: 'responsive_grid', component: () => import('../views/CSS/responsive_grid.vue')},
       // JavaScript Tasks
       // General Tasks
     { path: '/JavaScript/General/Task1', name: 'gen_functions', component: () => import('../views/JavaScript/Allgemein/Funktionen.vue')},

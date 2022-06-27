@@ -18,11 +18,12 @@
             <router-link to="/CSS">CSS</router-link>
             <div id="dropdown_list">
               <router-link to="/CSS/Task1">Selectors and Colors</router-link>
-              <router-link to="/CSS/Task2">Positioning</router-link>
-              <router-link to="/CSS/Task3">CSS Wireframe</router-link>
-              <router-link to="/CSS/Task4">Responsive Flexbox Desktop</router-link>
-              <router-link to="/CSS/Task5">Responsive Flexbox Mobile</router-link>
-              <router-link to="/CSS/Task6">Responsive Grid</router-link>
+              <router-link to="/CSS/Task2">Positioning_1</router-link>
+              <router-link to="/CSS/Task3">Positioning_2</router-link>
+              <router-link to="/CSS/Task4">CSS Wireframe</router-link>
+              <router-link to="/CSS/Task5">Responsive Flexbox Desktop</router-link>
+              <router-link to="/CSS/Task6">Responsive Flexbox Mobile</router-link>
+              <router-link to="/CSS/Task7">Responsive Grid</router-link>
             </div>
           </div>
           <div class="dropdown">
