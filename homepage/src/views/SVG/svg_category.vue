@@ -10,10 +10,6 @@
     <h3>Diagram</h3>
     <router-link to="/SVG/Task2"><button>Diagram</button></router-link>
   </div>
-  <div id="card">
-    <h3>Interaktion</h3>
-    <router-link to="/SVG/Task3"><button>Interaktion</button></router-link>
-  </div>
 </template>
 
 <script>

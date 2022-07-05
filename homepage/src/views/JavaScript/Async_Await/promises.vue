@@ -1,7 +1,8 @@
 <template>
-  <div>
-    This is promises task
-  </div>
+  <h1>
+    Concatenation of A.txt and B.txt
+  </h1>
+  <p id="concatenation">Concatenation did not happen yet</p>
 </template>
 
 <script>

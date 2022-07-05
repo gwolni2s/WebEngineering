@@ -1,12 +1,43 @@
 <template>
   <div>
-    This is deepcopy task
+    Die Ergebnisse der Aufgaben sind in den Dev Tools in der Konsole zu finden.
   </div>
 </template>
 
 <script>
 export default {
-  name: "deepcopy"
+  name: "deepcopy",
+  mounted() {
+    const deepCopy = (myObject) => {
+      let copy;
+
+      if (typeof myObject !== "object" || myObject == null) {
+        return myObject;
+      }
+
+      copy = Array.isArray(myObject) ? [] : {};
+
+      for (let key in myObject) {
+        let value = myObject[key];
+
+        copy[key] = deepCopy(value);
+      }
+
+      return copy;
+    }
+
+    const testArray = [[[1, 2], [3, 4]], [1, 2, 3, 4]];
+    const testObject = {myarray: [[[1, 2], [3, 4]], [1, 2, 3, 4]], hello: "world"};
+
+    const test1 = deepCopy(testArray);
+    console.assert(test1[0][0] !== testArray[0][0] && test1[0][0][0] === testArray[0][0][0]);
+
+    const test2 = deepCopy(testObject);
+    console.assert(test2["myarray"][0][0] !== testObject["myarray"][0][0] && test2["myarray"][0][0][0] === testObject["myarray"][0][0][0]);
+
+    console.log(deepCopy(testArray));
+    console.log(deepCopy(testObject));
+  }
 }
 </script>
 

@@ -6,10 +6,6 @@
     <h3>Funktional</h3>
     <router-link to="/JavaScript/Functional/Task1"><button>Funktional</button></router-link>
   </div>
-  <div id="card">
-    <h3>Analyse</h3>
-    <router-link to="/JavaScript/Functional/Task2"><button>Analyse</button></router-link>
-  </div>
 </template>
 
 <script>

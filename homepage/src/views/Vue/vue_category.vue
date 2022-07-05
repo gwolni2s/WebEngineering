@@ -1,18 +1,20 @@
 <template>
-  <div>
+  <div id="card">
     <h1>Vue</h1>
-  </div>
-  <div id="card">
-    <h3>Komponenten</h3>
-    <router-link to="/Vue/Task1"><button>Komponenten</button></router-link>
-  </div>
-  <div id="card">
-    <h3>Menu</h3>
-    <router-link to="/Vue/Task2"><button>Menu</button></router-link>
-  </div>
-  <div id="card">
-    <h3>Navigator</h3>
-    <router-link to="/Vue/Task3"><button>Navigator</button></router-link>
+    <h3>Kommentar zum Vue Kapitel</h3>
+    <p>
+      Die Homepage wurde mit dem Framework Vue js proramiiert. Deswegen sind Komponenten, wie beispielsweise ein Menu
+      oder eine Navigation bereits in der Homepage erhalten.
+      <br>
+      Ein Beispiel für eine Menu Komponente ist ein Link, wie HTML in der Navigationsleiste mit den Unterthemen als
+      Unterpunkte eines Dropdown Menus.
+      <br><br>
+      Ein Beispiel für eine Komponente ist die Home View Seite der Homepage, die die Kategerien der Themen,
+      wie HTML oder CSS zeigt.
+      <br><br>
+      Die Navigationsleiste ist das Beispiel für den WWW-Solution Navigator.
+    </p>
+
   </div>
 </template>
 

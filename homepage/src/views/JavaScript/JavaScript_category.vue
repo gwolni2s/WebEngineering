@@ -18,10 +18,6 @@
     <h3>Funktional</h3>
     <router-link to="/JavaScript/Functional"><button>Funktional</button></router-link>
   </div>
-  <div id="card">
-    <h3>Async Await</h3>
-    <router-link to="/JavaScript/Async_Await"><button>Async Await</button></router-link>
-  </div>
 </template>
 
 <script>

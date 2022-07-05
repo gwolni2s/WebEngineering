@@ -40,26 +40,15 @@
                 <router-link to="/JavaScript/DOM">DOM</router-link>
                 <router-link to="/JavaScript/DOM/Task1">Operationen</router-link>
                 <router-link to="/JavaScript/DOM/Task2">Rednerliste</router-link>
-                <router-link to="/JavaScript/DOM/Task3">Topsort</router-link>
               </div>
               <div>
-                <router-link to="/JavaScript/ECMAScript">ECAMScript</router-link>
+                <router-link to="/JavaScript/ECMAScript">ECMAScript</router-link>
                 <router-link to="/JavaScript/ECMAScript/Task1">Klammerpaare</router-link>
-                <router-link to="/JavaScript/ECMAScript/Task2">Iterierbarkeit</router-link>
-                <router-link to="/JavaScript/ECMAScript/Task3">Generator</router-link>
-                <router-link to="/JavaScript/ECMAScript/Task4">Proxy</router-link>
                 <router-link to="/JavaScript/ECMAScript/Task5">Deep Copy</router-link>
               </div>
               <div>
                 <router-link to="/JavaScript/Functional">Funktional</router-link>
                 <router-link to="/JavaScript/Functional/Task1">Funktional</router-link>
-                <router-link to="/JavaScript/Functional/Task2">Analyse</router-link>
-              </div>
-              <div>
-                <router-link to="/JavaScript/Async_Await">Async und Await</router-link>
-                <router-link to="/JavaScript/Async_Await/Task1">Promises</router-link>
-                <router-link to="/JavaScript/Async_Await/Task2">Async / Await</router-link>
-                <router-link to="/JavaScript/Async_Await/Task3">WWW Navigator</router-link>
               </div>
             </div>
           </div>
@@ -68,7 +57,6 @@
             <div id="dropdown_list">
               <router-link to="/SVG/Task1">Grafik</router-link>
               <router-link to="/SVG/Task2">Diagramm</router-link>
-              <router-link to="/SVG/Task3">Interaktiv</router-link>
             </div>
           </div>
           <div class="dropdown">
@@ -80,11 +68,6 @@
           </div>
           <div class="dropdown">
             <router-link to="/Vue">Vue</router-link>
-            <div id="dropdown_list">
-              <router-link to="/Vue/Task1">Komponenten</router-link>
-              <router-link to="/Vue/Task2">Menu</router-link>
-              <router-link to="/Vue/Task3">Navigator</router-link>
-            </div>
           </div>
           <div class="dropdown">
             <router-link to="/PHP">PHP</router-link>
@@ -101,7 +84,6 @@
               <router-link to="/security/Task3">Injection</router-link>
             </div>
           </div>
-          <router-link to="/profile">Profile</router-link>
         </nav>
       <!-- ToDo: develop navbar for mobile view -->
     </div>
@@ -127,7 +109,6 @@
           <router-link to="/Vue">Vue</router-link>
           <router-link to="/PHP">PHP</router-link>
           <router-link to="/WebSecurity">Web Security</router-link>
-          <router-link to="/profile">Profile</router-link>
         </div>
       </side-nav>
     </div>

@@ -10,10 +10,6 @@
     <h3>Rednerliste</h3>
     <router-link to="/JavaScript/DOM/Task2"><button>Rednerliste</button></router-link>
   </div>
-  <div id="card">
-    <h3>Top Sort</h3>
-    <router-link to="/JavaScript/DOM/Task3"><button>TopSort</button></router-link>
-  </div>
 </template>
 
 <script>

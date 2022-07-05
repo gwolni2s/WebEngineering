@@ -7,20 +7,8 @@
     <router-link to="/JavaScript/ECMAScript/Task1"><button>Klammerpaare</button></router-link>
   </div>
   <div id="card">
-    <h3>Iterierbarkeit</h3>
-    <router-link to="/JavaScript/ECMAScript/Task2"><button>Iterierbarkeit</button></router-link>
-  </div>
-  <div id="card">
-    <h3>Generator</h3>
-    <router-link to="/JavaScript/ECMAScript/Task3"><button>Generator</button></router-link>
-  </div>
-  <div id="card">
     <h3>Deep Copy</h3>
     <router-link to="/JavaScript/ECMAScript/Task4"><button>Deep Copy</button></router-link>
-  </div>
-  <div id="card">
-    <h3>Proxy</h3>
-    <router-link to="/JavaScript/ECMAScript/Task5"><button>Proxy</button></router-link>
   </div>
 </template>
 
